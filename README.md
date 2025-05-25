@@ -26,4 +26,5 @@ Este proyecto consiste en diseñar e implementar un proceso ETL utilizando **SSI
 
 ## 📂 Estructura del proyecto
 El archivo de solución SSIS para Visual Studio es: ETL_TDC/ETL_TDC.sln
+
 El archivo SQL Server es: bd_Staging_DataWarehouse.sql
