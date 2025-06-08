@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{E77DCFDB-2A97-4E03-80A2-2D2F5C8BAA5A}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{9188C5E9-F4BB-41DD-AB62-885DC040564A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -64,279 +64,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Cargar Clientes Staging\Origen Clientes_R XML"
+              refId="Package\Cargar Clientes Staging\Origen Clientes_may XML"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Extrae datos de un archivo XML. Por ejemplo, se usa para extraer los datos de catálogo de un archivo XML que representa catálogos y elementos de catálogo. Antes de usar la tarea, se debe especificar el esquema y generar una salida para cada elemento XML.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
               description="Extrae datos de un archivo XML. Por ejemplo, se usa para extraer los datos de catálogo de un archivo XML que representa catálogos y elementos de catálogo. Antes de usar la tarea, se debe especificar el esquema y generar una salida para cada elemento XML."
-              name="Origen Clientes_R XML"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.String"
-                  name="UserComponentTypeName">Microsoft.XmlSourceAdapter</property>
-                <property
-                  dataType="System.String"
-                  description="Datos XML que usa el adaptador de origen XML."
-                  expressionType="Notify"
-                  name="XMLData">C:\Users\Fabian\Documentos\ETL_TheDrinkingCompany\FuentesDeDatos\Customer_R.xml</property>
-                <property
-                  dataType="System.String"
-                  description="Variable que usa el adaptador de origen XML para especificar datos XML."
-                  name="XMLDataVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Define cómo obtiene el adaptador de origen XML los datos XML."
-                  name="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="Definición de esquema XML que usa el adaptador de origen XML."
-                  expressionType="Notify"
-                  name="XMLSchemaDefinition">C:\Users\Fabian\Documentos\ETL_TheDrinkingCompany\FuentesDeDatos\Customer_R.xsd</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Identifica si se usará el esquema insertado."
-                  name="UseInlineSchema">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Define cómo se asignan los tipos de enteros XML."
-                  name="XMLIntegerMapping"
-                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter+XMLIntegerMappingConverter">0</property>
-              </properties>
-              <outputs>
-                <output
-                  refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente]"
-                  name="cliente">
-                  <properties>
-                    <property
-                      dataType="System.String"
-                      description="Identifica el conjunto de filas asociado a la salida."
-                      name="RowsetID">cliente</property>
-                  </properties>
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].Columns[CUSTOMER_ID]"
-                      dataType="ui2"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].ExternalColumns[CUSTOMER_ID]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].Columns[CUSTOMER_ID]"
-                      name="CUSTOMER_ID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].Columns[FULL_NAME]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].ExternalColumns[FULL_NAME]"
-                      length="255"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].Columns[FULL_NAME]"
-                      name="FULL_NAME"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].Columns[BIRTH_DATE]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].ExternalColumns[BIRTH_DATE]"
-                      length="255"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].Columns[BIRTH_DATE]"
-                      name="BIRTH_DATE"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].Columns[CITY]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].ExternalColumns[CITY]"
-                      length="255"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].Columns[CITY]"
-                      name="CITY"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].Columns[STATE]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].ExternalColumns[STATE]"
-                      length="255"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].Columns[STATE]"
-                      name="STATE"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].Columns[ZIPCODE]"
-                      dataType="ui4"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].ExternalColumns[ZIPCODE]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].Columns[ZIPCODE]"
-                      name="ZIPCODE"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].ExternalColumns[CUSTOMER_ID]"
-                      dataType="ui2"
-                      name="CUSTOMER_ID">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.UInt16</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].ExternalColumns[FULL_NAME]"
-                      dataType="wstr"
-                      length="255"
-                      name="FULL_NAME">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].ExternalColumns[BIRTH_DATE]"
-                      dataType="wstr"
-                      length="255"
-                      name="BIRTH_DATE">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].ExternalColumns[CITY]"
-                      dataType="wstr"
-                      length="255"
-                      name="CITY">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].ExternalColumns[STATE]"
-                      dataType="wstr"
-                      length="255"
-                      name="STATE">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].ExternalColumns[ZIPCODE]"
-                      dataType="ui4"
-                      name="ZIPCODE">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.UInt32</property>
-                      </properties>
-                    </externalMetadataColumn>
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente]"
-                  isErrorOut="true"
-                  name="Salida de error de cliente">
-                  <properties>
-                    <property
-                      dataType="System.String"
-                      description="Identifica el conjunto de filas asociado a la salida."
-                      name="RowsetID">cliente</property>
-                  </properties>
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].Columns[CUSTOMER_ID]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].ExternalColumns[CUSTOMER_ID]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].Columns[CUSTOMER_ID]"
-                      name="CUSTOMER_ID" />
-                    <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].Columns[FULL_NAME]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].ExternalColumns[FULL_NAME]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].Columns[FULL_NAME]"
-                      name="FULL_NAME" />
-                    <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].Columns[BIRTH_DATE]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].ExternalColumns[BIRTH_DATE]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].Columns[BIRTH_DATE]"
-                      name="BIRTH_DATE" />
-                    <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].Columns[CITY]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].ExternalColumns[CITY]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].Columns[CITY]"
-                      name="CITY" />
-                    <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].Columns[STATE]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].ExternalColumns[STATE]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].Columns[STATE]"
-                      name="STATE" />
-                    <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].Columns[ZIPCODE]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].ExternalColumns[ZIPCODE]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].Columns[ZIPCODE]"
-                      name="ZIPCODE" />
-                    <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].ExternalColumns[CUSTOMER_ID]"
-                      dataType="nText"
-                      name="CUSTOMER_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].ExternalColumns[FULL_NAME]"
-                      dataType="nText"
-                      name="FULL_NAME" />
-                    <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].ExternalColumns[BIRTH_DATE]"
-                      dataType="nText"
-                      name="BIRTH_DATE" />
-                    <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].ExternalColumns[CITY]"
-                      dataType="nText"
-                      name="CITY" />
-                    <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].ExternalColumns[STATE]"
-                      dataType="nText"
-                      name="STATE" />
-                    <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[Salida de error de cliente].ExternalColumns[ZIPCODE]"
-                      dataType="nText"
-                      name="ZIPCODE" />
-                  </externalMetadataColumns>
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Cargar Clientes Staging\Origen Clientes_W XML"
-              componentClassID="Microsoft.ManagedComponentHost"
-              contactInfo="Extrae datos de un archivo XML. Por ejemplo, se usa para extraer los datos de catálogo de un archivo XML que representa catálogos y elementos de catálogo. Antes de usar la tarea, se debe especificar el esquema y generar una salida para cada elemento XML.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
-              description="Extrae datos de un archivo XML. Por ejemplo, se usa para extraer los datos de catálogo de un archivo XML que representa catálogos y elementos de catálogo. Antes de usar la tarea, se debe especificar el esquema y generar una salida para cada elemento XML."
-              name="Origen Clientes_W XML"
+              name="Origen Clientes_may XML"
               usesDispositions="true"
               version="2">
               <properties>
@@ -373,7 +105,7 @@
               </properties>
               <outputs>
                 <output
-                  refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente]"
+                  refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente]"
                   name="cliente">
                   <properties>
                     <property
@@ -383,68 +115,68 @@
                   </properties>
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].Columns[CUSTOMER_ID]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].Columns[CUSTOMER_ID]"
                       dataType="ui2"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].ExternalColumns[CUSTOMER_ID]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].Columns[CUSTOMER_ID]"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].ExternalColumns[CUSTOMER_ID]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].Columns[CUSTOMER_ID]"
                       name="CUSTOMER_ID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].Columns[FULL_NAME]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].Columns[FULL_NAME]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].ExternalColumns[FULL_NAME]"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].ExternalColumns[FULL_NAME]"
                       length="255"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].Columns[FULL_NAME]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].Columns[FULL_NAME]"
                       name="FULL_NAME"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].Columns[BIRTH_DATE]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].Columns[BIRTH_DATE]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].ExternalColumns[BIRTH_DATE]"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].ExternalColumns[BIRTH_DATE]"
                       length="255"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].Columns[BIRTH_DATE]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].Columns[BIRTH_DATE]"
                       name="BIRTH_DATE"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].Columns[CITY]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].Columns[CITY]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].ExternalColumns[CITY]"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].ExternalColumns[CITY]"
                       length="255"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].Columns[CITY]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].Columns[CITY]"
                       name="CITY"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].Columns[STATE]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].Columns[STATE]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].ExternalColumns[STATE]"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].ExternalColumns[STATE]"
                       length="255"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].Columns[STATE]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].Columns[STATE]"
                       name="STATE"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].Columns[ZIPCODE]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].Columns[ZIPCODE]"
                       dataType="ui4"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].ExternalColumns[ZIPCODE]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].Columns[ZIPCODE]"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].ExternalColumns[ZIPCODE]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].Columns[ZIPCODE]"
                       name="ZIPCODE"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].ExternalColumns[CUSTOMER_ID]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].ExternalColumns[CUSTOMER_ID]"
                       dataType="ui2"
                       name="CUSTOMER_ID">
                       <properties>
@@ -454,7 +186,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].ExternalColumns[FULL_NAME]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].ExternalColumns[FULL_NAME]"
                       dataType="wstr"
                       length="255"
                       name="FULL_NAME">
@@ -465,7 +197,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].ExternalColumns[BIRTH_DATE]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].ExternalColumns[BIRTH_DATE]"
                       dataType="wstr"
                       length="255"
                       name="BIRTH_DATE">
@@ -476,7 +208,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].ExternalColumns[CITY]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].ExternalColumns[CITY]"
                       dataType="wstr"
                       length="255"
                       name="CITY">
@@ -487,7 +219,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].ExternalColumns[STATE]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].ExternalColumns[STATE]"
                       dataType="wstr"
                       length="255"
                       name="STATE">
@@ -498,7 +230,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].ExternalColumns[ZIPCODE]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].ExternalColumns[ZIPCODE]"
                       dataType="ui4"
                       name="ZIPCODE">
                       <properties>
@@ -510,7 +242,7 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente]"
+                  refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente]"
                   isErrorOut="true"
                   name="Salida de error de cliente">
                   <properties>
@@ -521,78 +253,78 @@
                   </properties>
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].Columns[CUSTOMER_ID]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].Columns[CUSTOMER_ID]"
                       dataType="nText"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].ExternalColumns[CUSTOMER_ID]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].Columns[CUSTOMER_ID]"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].ExternalColumns[CUSTOMER_ID]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].Columns[CUSTOMER_ID]"
                       name="CUSTOMER_ID" />
                     <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].Columns[FULL_NAME]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].Columns[FULL_NAME]"
                       dataType="nText"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].ExternalColumns[FULL_NAME]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].Columns[FULL_NAME]"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].ExternalColumns[FULL_NAME]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].Columns[FULL_NAME]"
                       name="FULL_NAME" />
                     <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].Columns[BIRTH_DATE]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].Columns[BIRTH_DATE]"
                       dataType="nText"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].ExternalColumns[BIRTH_DATE]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].Columns[BIRTH_DATE]"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].ExternalColumns[BIRTH_DATE]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].Columns[BIRTH_DATE]"
                       name="BIRTH_DATE" />
                     <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].Columns[CITY]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].Columns[CITY]"
                       dataType="nText"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].ExternalColumns[CITY]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].Columns[CITY]"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].ExternalColumns[CITY]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].Columns[CITY]"
                       name="CITY" />
                     <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].Columns[STATE]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].Columns[STATE]"
                       dataType="nText"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].ExternalColumns[STATE]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].Columns[STATE]"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].ExternalColumns[STATE]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].Columns[STATE]"
                       name="STATE" />
                     <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].Columns[ZIPCODE]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].Columns[ZIPCODE]"
                       dataType="nText"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].ExternalColumns[ZIPCODE]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].Columns[ZIPCODE]"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].ExternalColumns[ZIPCODE]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].Columns[ZIPCODE]"
                       name="ZIPCODE" />
                     <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].Columns[ErrorCode]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].Columns[ErrorCode]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].Columns[ErrorColumn]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].Columns[ErrorColumn]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].ExternalColumns[CUSTOMER_ID]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].ExternalColumns[CUSTOMER_ID]"
                       dataType="nText"
                       name="CUSTOMER_ID" />
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].ExternalColumns[FULL_NAME]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].ExternalColumns[FULL_NAME]"
                       dataType="nText"
                       name="FULL_NAME" />
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].ExternalColumns[BIRTH_DATE]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].ExternalColumns[BIRTH_DATE]"
                       dataType="nText"
                       name="BIRTH_DATE" />
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].ExternalColumns[CITY]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].ExternalColumns[CITY]"
                       dataType="nText"
                       name="CITY" />
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].ExternalColumns[STATE]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].ExternalColumns[STATE]"
                       dataType="nText"
                       name="STATE" />
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[Salida de error de cliente].ExternalColumns[ZIPCODE]"
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[Salida de error de cliente].ExternalColumns[ZIPCODE]"
                       dataType="nText"
                       name="ZIPCODE" />
                   </externalMetadataColumns>
@@ -600,11 +332,279 @@
               </outputs>
             </component>
             <component
-              refId="Package\Cargar Clientes Staging\stg_clientes_R_G06"
+              refId="Package\Cargar Clientes Staging\Origen Clientes_min XML"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Extrae datos de un archivo XML. Por ejemplo, se usa para extraer los datos de catálogo de un archivo XML que representa catálogos y elementos de catálogo. Antes de usar la tarea, se debe especificar el esquema y generar una salida para cada elemento XML.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Extrae datos de un archivo XML. Por ejemplo, se usa para extraer los datos de catálogo de un archivo XML que representa catálogos y elementos de catálogo. Antes de usar la tarea, se debe especificar el esquema y generar una salida para cada elemento XML."
+              name="Origen Clientes_min XML"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.XmlSourceAdapter</property>
+                <property
+                  dataType="System.String"
+                  description="Datos XML que usa el adaptador de origen XML."
+                  expressionType="Notify"
+                  name="XMLData">C:\Users\Fabian\Documentos\ETL_TheDrinkingCompany\FuentesDeDatos\Customer_R.xml</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que usa el adaptador de origen XML para especificar datos XML."
+                  name="XMLDataVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Define cómo obtiene el adaptador de origen XML los datos XML."
+                  name="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Definición de esquema XML que usa el adaptador de origen XML."
+                  expressionType="Notify"
+                  name="XMLSchemaDefinition">C:\Users\Fabian\Documentos\ETL_TheDrinkingCompany\FuentesDeDatos\Customer_R.xsd</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Identifica si se usará el esquema insertado."
+                  name="UseInlineSchema">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Define cómo se asignan los tipos de enteros XML."
+                  name="XMLIntegerMapping"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter+XMLIntegerMappingConverter">0</property>
+              </properties>
+              <outputs>
+                <output
+                  refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente]"
+                  name="cliente">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifica el conjunto de filas asociado a la salida."
+                      name="RowsetID">cliente</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].Columns[CUSTOMER_ID]"
+                      dataType="ui2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].ExternalColumns[CUSTOMER_ID]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].Columns[FULL_NAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].ExternalColumns[FULL_NAME]"
+                      length="255"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].Columns[FULL_NAME]"
+                      name="FULL_NAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].Columns[BIRTH_DATE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].ExternalColumns[BIRTH_DATE]"
+                      length="255"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].Columns[BIRTH_DATE]"
+                      name="BIRTH_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].Columns[CITY]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].ExternalColumns[CITY]"
+                      length="255"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].Columns[CITY]"
+                      name="CITY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].Columns[STATE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].ExternalColumns[STATE]"
+                      length="255"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].Columns[STATE]"
+                      name="STATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].Columns[ZIPCODE]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].ExternalColumns[ZIPCODE]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].Columns[ZIPCODE]"
+                      name="ZIPCODE"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].ExternalColumns[CUSTOMER_ID]"
+                      dataType="ui2"
+                      name="CUSTOMER_ID">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt16</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].ExternalColumns[FULL_NAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="FULL_NAME">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].ExternalColumns[BIRTH_DATE]"
+                      dataType="wstr"
+                      length="255"
+                      name="BIRTH_DATE">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].ExternalColumns[CITY]"
+                      dataType="wstr"
+                      length="255"
+                      name="CITY">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].ExternalColumns[STATE]"
+                      dataType="wstr"
+                      length="255"
+                      name="STATE">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].ExternalColumns[ZIPCODE]"
+                      dataType="ui4"
+                      name="ZIPCODE">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt32</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente]"
+                  isErrorOut="true"
+                  name="Salida de error de cliente">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifica el conjunto de filas asociado a la salida."
+                      name="RowsetID">cliente</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].Columns[CUSTOMER_ID]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].ExternalColumns[CUSTOMER_ID]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID" />
+                    <outputColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].Columns[FULL_NAME]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].ExternalColumns[FULL_NAME]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].Columns[FULL_NAME]"
+                      name="FULL_NAME" />
+                    <outputColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].Columns[BIRTH_DATE]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].ExternalColumns[BIRTH_DATE]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].Columns[BIRTH_DATE]"
+                      name="BIRTH_DATE" />
+                    <outputColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].Columns[CITY]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].ExternalColumns[CITY]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].Columns[CITY]"
+                      name="CITY" />
+                    <outputColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].Columns[STATE]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].ExternalColumns[STATE]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].Columns[STATE]"
+                      name="STATE" />
+                    <outputColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].Columns[ZIPCODE]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].ExternalColumns[ZIPCODE]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].Columns[ZIPCODE]"
+                      name="ZIPCODE" />
+                    <outputColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].ExternalColumns[CUSTOMER_ID]"
+                      dataType="nText"
+                      name="CUSTOMER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].ExternalColumns[FULL_NAME]"
+                      dataType="nText"
+                      name="FULL_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].ExternalColumns[BIRTH_DATE]"
+                      dataType="nText"
+                      name="BIRTH_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].ExternalColumns[CITY]"
+                      dataType="nText"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].ExternalColumns[STATE]"
+                      dataType="nText"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[Salida de error de cliente].ExternalColumns[ZIPCODE]"
+                      dataType="nText"
+                      name="ZIPCODE" />
+                  </externalMetadataColumns>
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar Clientes Staging\stg_clientes_may_G06"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
               description="Destino de OLE DB"
-              name="stg_clientes_R_G06"
+              name="stg_clientes_may_G06"
               usesDispositions="true"
               version="4">
               <properties>
@@ -615,7 +615,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">[stg_clientes_R_G06]</property>
+                  name="OpenRowset">[stg_clientes_may_G06]</property>
                 <property
                   dataType="System.String"
                   description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -657,7 +657,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Connections[OleDbConnection]"
+                  refId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Connections[OleDbConnection]"
                   connectionManagerID="{8AC29DC2-E4E0-4B8A-9ABD-38BF313AB056}:external"
                   connectionManagerRefId="Project.ConnectionManagers[localhost.bd_staging_2025_G06]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
@@ -665,81 +665,81 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB]"
+                  refId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB]"
                   errorOrTruncationOperation="Insertar"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Entrada de destino de OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB].Columns[CUSTOMER_ID]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB].Columns[CUSTOMER_ID]"
                       cachedDataType="ui2"
                       cachedName="CUSTOMER_ID"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[CUSTOMER_ID]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].Columns[CUSTOMER_ID]" />
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[CUSTOMER_ID]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].Columns[CUSTOMER_ID]" />
                     <inputColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB].Columns[FULL_NAME]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB].Columns[FULL_NAME]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="FULL_NAME"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[FULL_NAME]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].Columns[FULL_NAME]" />
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[FULL_NAME]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].Columns[FULL_NAME]" />
                     <inputColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB].Columns[BIRTH_DATE]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB].Columns[BIRTH_DATE]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="BIRTH_DATE"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[BIRTH_DATE]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].Columns[BIRTH_DATE]" />
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[BIRTH_DATE]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].Columns[BIRTH_DATE]" />
                     <inputColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB].Columns[CITY]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB].Columns[CITY]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="CITY"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[CITY]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].Columns[CITY]" />
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[CITY]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].Columns[CITY]" />
                     <inputColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB].Columns[STATE]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB].Columns[STATE]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="STATE"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[STATE]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].Columns[STATE]" />
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[STATE]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].Columns[STATE]" />
                     <inputColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB].Columns[ZIPCODE]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB].Columns[ZIPCODE]"
                       cachedDataType="ui4"
                       cachedName="ZIPCODE"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[ZIPCODE]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente].Columns[ZIPCODE]" />
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[ZIPCODE]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente].Columns[ZIPCODE]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[CUSTOMER_ID]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[CUSTOMER_ID]"
                       dataType="i4"
                       name="CUSTOMER_ID" />
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[FULL_NAME]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[FULL_NAME]"
                       dataType="wstr"
                       length="255"
                       name="FULL_NAME" />
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[BIRTH_DATE]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[BIRTH_DATE]"
                       dataType="wstr"
                       length="255"
                       name="BIRTH_DATE" />
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[CITY]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[CITY]"
                       dataType="wstr"
                       length="255"
                       name="CITY" />
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[STATE]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[STATE]"
                       dataType="wstr"
                       length="255"
                       name="STATE" />
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[ZIPCODE]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[ZIPCODE]"
                       dataType="i8"
                       name="ZIPCODE" />
                   </externalMetadataColumns>
@@ -747,22 +747,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Outputs[Salida de error de destino de OLE DB]"
+                  refId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Outputs[Salida de error de destino de OLE DB]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Salida de error de destino de OLE DB"
-                  synchronousInputId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB]">
+                  synchronousInputId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      lineageId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      lineageId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -771,11 +771,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Cargar Clientes Staging\stg_clientes_W_G06"
+              refId="Package\Cargar Clientes Staging\stg_clientes_min_G06"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
               description="Destino de OLE DB"
-              name="stg_clientes_W_G06"
+              name="stg_clientes_min_G06"
               usesDispositions="true"
               version="4">
               <properties>
@@ -786,7 +786,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">[stg_clientes_W_G06]</property>
+                  name="OpenRowset">[stg_clientes_min_G06]</property>
                 <property
                   dataType="System.String"
                   description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -828,7 +828,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Connections[OleDbConnection]"
+                  refId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Connections[OleDbConnection]"
                   connectionManagerID="{8AC29DC2-E4E0-4B8A-9ABD-38BF313AB056}:external"
                   connectionManagerRefId="Project.ConnectionManagers[localhost.bd_staging_2025_G06]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
@@ -836,81 +836,81 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB]"
+                  refId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB]"
                   errorOrTruncationOperation="Insertar"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Entrada de destino de OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB].Columns[CUSTOMER_ID]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB].Columns[CUSTOMER_ID]"
                       cachedDataType="ui2"
                       cachedName="CUSTOMER_ID"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[CUSTOMER_ID]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].Columns[CUSTOMER_ID]" />
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[CUSTOMER_ID]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].Columns[CUSTOMER_ID]" />
                     <inputColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB].Columns[FULL_NAME]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB].Columns[FULL_NAME]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="FULL_NAME"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[FULL_NAME]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].Columns[FULL_NAME]" />
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[FULL_NAME]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].Columns[FULL_NAME]" />
                     <inputColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB].Columns[BIRTH_DATE]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB].Columns[BIRTH_DATE]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="BIRTH_DATE"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[BIRTH_DATE]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].Columns[BIRTH_DATE]" />
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[BIRTH_DATE]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].Columns[BIRTH_DATE]" />
                     <inputColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB].Columns[CITY]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB].Columns[CITY]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="CITY"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[CITY]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].Columns[CITY]" />
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[CITY]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].Columns[CITY]" />
                     <inputColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB].Columns[STATE]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB].Columns[STATE]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="STATE"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[STATE]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].Columns[STATE]" />
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[STATE]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].Columns[STATE]" />
                     <inputColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB].Columns[ZIPCODE]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB].Columns[ZIPCODE]"
                       cachedDataType="ui4"
                       cachedName="ZIPCODE"
-                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[ZIPCODE]"
-                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente].Columns[ZIPCODE]" />
+                      externalMetadataColumnId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[ZIPCODE]"
+                      lineageId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente].Columns[ZIPCODE]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[CUSTOMER_ID]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[CUSTOMER_ID]"
                       dataType="i4"
                       name="CUSTOMER_ID" />
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[FULL_NAME]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[FULL_NAME]"
                       dataType="wstr"
                       length="255"
                       name="FULL_NAME" />
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[BIRTH_DATE]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[BIRTH_DATE]"
                       dataType="wstr"
                       length="255"
                       name="BIRTH_DATE" />
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[CITY]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[CITY]"
                       dataType="wstr"
                       length="255"
                       name="CITY" />
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[STATE]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[STATE]"
                       dataType="wstr"
                       length="255"
                       name="STATE" />
                     <externalMetadataColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[ZIPCODE]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB].ExternalColumns[ZIPCODE]"
                       dataType="i8"
                       name="ZIPCODE" />
                   </externalMetadataColumns>
@@ -918,22 +918,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Outputs[Salida de error de destino de OLE DB]"
+                  refId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Outputs[Salida de error de destino de OLE DB]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Salida de error de destino de OLE DB"
-                  synchronousInputId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB]">
+                  synchronousInputId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      lineageId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      refId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      lineageId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -945,14 +945,14 @@
           <paths>
             <path
               refId="Package\Cargar Clientes Staging.Paths[cliente]"
-              endId="Package\Cargar Clientes Staging\stg_clientes_R_G06.Inputs[Entrada de destino de OLE DB]"
+              endId="Package\Cargar Clientes Staging\stg_clientes_min_G06.Inputs[Entrada de destino de OLE DB]"
               name="cliente"
-              startId="Package\Cargar Clientes Staging\Origen Clientes_R XML.Outputs[cliente]" />
+              startId="Package\Cargar Clientes Staging\Origen Clientes_min XML.Outputs[cliente]" />
             <path
               refId="Package\Cargar Clientes Staging.Paths[cliente1]"
-              endId="Package\Cargar Clientes Staging\stg_clientes_W_G06.Inputs[Entrada de destino de OLE DB]"
+              endId="Package\Cargar Clientes Staging\stg_clientes_may_G06.Inputs[Entrada de destino de OLE DB]"
               name="cliente"
-              startId="Package\Cargar Clientes Staging\Origen Clientes_W XML.Outputs[cliente]" />
+              startId="Package\Cargar Clientes Staging\Origen Clientes_may XML.Outputs[cliente]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -993,13 +993,13 @@
           Id="Package\Borrar Clientes Staging"
           TopLeft="417,91" />
         <NodeLayout
-          Size="196,42"
-          Id="Package\Cargar Clientes Staging"
-          TopLeft="413,218" />
-        <NodeLayout
           Size="177,42"
           Id="Package\Cargar Clientes DW"
           TopLeft="418,345" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Cargar Clientes Staging"
+          TopLeft="413,218" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
           TopLeft="508.75,260">
@@ -1053,46 +1053,24 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="178,42"
-          Id="Package\Cargar Clientes Staging\stg_clientes_R_G06"
-          TopLeft="270,315" />
-        <NodeLayout
-          Size="194,42"
-          Id="Package\Cargar Clientes Staging\Origen Clientes_R XML"
-          TopLeft="256,181" />
-        <EdgeLayout
-          Id="Package\Cargar Clientes Staging.Paths[cliente]"
-          TopLeft="356,223">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,92"
-              Start="0,0"
-              End="0,84.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,84.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Cargar Clientes Staging\stg_clientes_W_G06"
+          Size="191,42"
+          Id="Package\Cargar Clientes Staging\stg_clientes_may_G06"
           TopLeft="553,313" />
         <NodeLayout
-          Size="197,42"
-          Id="Package\Cargar Clientes Staging\Origen Clientes_W XML"
+          Size="204,42"
+          Id="Package\Cargar Clientes Staging\Origen Clientes_min XML"
+          TopLeft="256,181" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Cargar Clientes Staging\Origen Clientes_may XML"
           TopLeft="548,184" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Cargar Clientes Staging\stg_clientes_min_G06"
+          TopLeft="270,315" />
         <EdgeLayout
           Id="Package\Cargar Clientes Staging.Paths[cliente1]"
-          TopLeft="644.75,226">
+          TopLeft="650,226">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1112,11 +1090,46 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cargar Clientes Staging.Paths[cliente]"
+          TopLeft="361,223">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,92"
+              Start="0,0"
+              End="0,84.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,84.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Cargar Clientes Staging\stg_clientes_R_G06">
+    design-time-name="Package\Cargar Clientes Staging\stg_clientes_may_G06">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar Clientes Staging\stg_clientes_min_G06">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
