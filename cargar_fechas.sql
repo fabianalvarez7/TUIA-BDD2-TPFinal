@@ -1,7 +1,9 @@
-USE [bd_datawarehouse_2025_G06]
+USE [datawarehouse_2025_G06]
 GO
+-- Vaciar la tabla
+TRUNCATE TABLE dbo.Dim_tiempo_G06;
 
-
+-- Generar las fechas
 DECLARE @vFechaDesde DATE = '1900-01-01';
 DECLARE @vFechaHasta DATE = '2099-12-31';
 
@@ -12,11 +14,13 @@ WITH Fechas (Fecha) AS (
     FROM Fechas
     WHERE Fecha < @vFechaHasta
 )
-INSERT INTO [dbo].[Dim_Fechas] (
-    Fecha, Dia, Mes, NombreMes, Año, Trimestre, Semestre,
+
+INSERT INTO [dbo].[Dim_tiempo_G06] (
+    Fecha_key, Fecha, Dia, Mes, NombreMes, Año, Trimestre, Semestre,
     DiaSemana, NombreDiaSemana, Semana, DiaAño
 )
 SELECT
+	CONVERT(INT, CONVERT(VARCHAR(8), Fecha, 112)) AS Fecha_key,
     Fecha,
     DAY(Fecha) AS Dia,
     MONTH(Fecha) AS Mes,

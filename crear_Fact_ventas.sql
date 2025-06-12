@@ -1,47 +1,54 @@
--- Creación de Fact Ventas
+-- Creación Fact_Ventas
 
-with CTE_Total_Facturado AS(
-	select v.billing_id, v.date, SUM(v.quantity) * SUM(p.PRICE) AS total_facturado
-	from dbo.Tmp_Fact_Ventas v  --1.676.294 filas
-		left join dbo.Precios_DW p  --con inner join 1.642.971 quedan sin precios
-			on v.product_id = p.PRODUCT_ID
-			and v.date >= p.[FROM]
-			and (v.date < p.UNTIL or p.UNTIL is null)
-		group by v.billing_id, v.date
-),
-
-	CTE_Descuentos AS(
-		select v.billing_id, v.date, v.total_facturado, isnull (MAX(d.PERCENTAGE,/100.00), 0.00) AS descuento
-		from CTE_Total_Facturado v  --1.656.457 filas
-			left join dbo.Descuentos_DW d
-				on v.date >= d.[FROM]
-				and (v.date < d.UNTIL or d.UNTIL is null)
-				and v.total_facturado > d.TOTAL_BILLING
-			group by v.billing_id, v.date, v.total_facturado
-)
-
-select v. *
-	,v.quantity * p.PRICE AS total_facturado
-	,v.quantity * p.PRICE * (1 - d.Descuentos_DW) AS total_facturado_con_descuento
-	,p.PRICE
-	,d.descuento
-	--, case when pr.EsLata = 1 then v.quantity else 0 end Cantidad_Latas
-	--, case when pr.Medida = 'Liter' then pr.Capacidad * v.quantity else (pr.Capacidad / 1000.00) * v.quantity end Cantidad_Litros_Vendidos
+USE datawarehouse_2025_G06
 
 
--- Agrego las FK de las dimensiones
-,pr.Productos_FK
-,convert(int, convert(varchar(8), v.date,112)) AS Tiempo_FK
+CREATE TABLE dbo.Fact_Ventas_G06 (
+    venta_id              INT IDENTITY(1,1) PRIMARY KEY,  -- Clave subrogada para el dw
+    
+    -- Claves foráneas a dimensiones
+    tiempo_key            INT NOT NULL, -- formato entero YYYYMMDD 
+	producto_key          INT NOT NULL,
+    cliente_key           INT NOT NULL,
+    empleado_key          INT NOT NULL,
+    rango_etario_id       INT NOT NULL,
+
+    -- Métricas
+    cantidad              INT NOT NULL,
+    cantidad_litros       FLOAT NOT NULL,
+    cantidad_latas        INT NOT NULL,
+	cantidad_litros_diet  FLOAT NOT NULL,
+    precio_unitario       MONEY NOT NULL,
+    monto_sin_descuento   MONEY NOT NULL,
+    monto_con_descuento   MONEY NOT NULL,
+	edad_cliente          INT NULL,
+	
+	-- Adicionales
+	region				  NVARCHAR(100) NULL
+);
 
 
-from dbo.Tmp_Fact_Ventas v  --1.676.294 filas
-	left join dbo.Precios_DW p  --con inner join 1.642.971 quedan sin precios
-		on v.product_id = p.PRODUCT_ID
-		and v.date >= p.[FROM]
-		and (v.date < p.UNTIL or p.UNTIL is null)
+-- FK a Dim_Tiempo
+ALTER TABLE dbo.Fact_Ventas_G06
+ADD CONSTRAINT FK_FactVentas_Tiempo
+    FOREIGN KEY (tiempo_key) REFERENCES dbo.Dim_tiempo_G06(Fecha_key);
 
-	left join CTE_Descuentos d
-		on v.billing_id = d.billing_id
+-- FK a Dim_Productos
+ALTER TABLE dbo.Fact_Ventas_G06
+ADD CONSTRAINT FK_FactVentas_Producto
+    FOREIGN KEY (producto_key) REFERENCES dbo.Dim_Productos_G06(producto_key);
 
-	left join [bd_datawarehouse_2025_G06].dbo.Dim_Productos pr
-		on v.Product_id = pr.Product_ID
+-- FK a Dim_Clientes
+ALTER TABLE dbo.Fact_Ventas_G06
+ADD CONSTRAINT FK_FactVentas_Cliente
+    FOREIGN KEY (cliente_key) REFERENCES dbo.Dim_Clientes_G06(cliente_key);
+
+-- FK a Dim_Empleados
+ALTER TABLE dbo.Fact_Ventas_G06
+ADD CONSTRAINT FK_FactVentas_Empleado
+    FOREIGN KEY (empleado_key) REFERENCES dbo.Dim_Empleados_G06(empleado_key);
+
+-- FK a Dim_RangoEtario
+ALTER TABLE dbo.Fact_Ventas_G06
+ADD CONSTRAINT FK_FactVentas_RangoEtario
+    FOREIGN KEY (rango_etario_id) REFERENCES dbo.Dim_rango_etario_G06(rango_etario_id);
